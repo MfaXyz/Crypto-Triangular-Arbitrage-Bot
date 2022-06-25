@@ -578,7 +578,7 @@ def third_step():
                 This part, which is related to the execution of
                 the transaction in the exchange, does not work properly and you
                 will most likely lose money after its execution!
-                I look forward to your comments to make this part profitable:)
+                I look forward to your commits to make this part profitable:)
                 """
                 first_amount1 = amount_dict[real_rate_arb['swap_1']]
                 base_increment1 = len(str(inc_list[real_rate_arb['contract_1']])) - 2
@@ -643,7 +643,7 @@ def third_step():
                 This part, which is related to the execution of
                 the transaction in the exchange, does not work properly and you
                 will most likely lose money after its execution!
-                I look forward to your comments to make this part profitable:)
+                I look forward to your commits to make this part profitable:)
                 END OF PART. """
 
 
