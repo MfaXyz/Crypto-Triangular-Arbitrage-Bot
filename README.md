@@ -18,8 +18,8 @@ and run python file: python main.py
 ```
 for find structuring pairs your must uncomment these two lines:
 '''
-# coin_list = first_step()
-# structured_pairs = second_step(coin_list)
+coin_list = first_step()
+structured_pairs = second_step(coin_list)
 '''
 and comment last line:
 '''
