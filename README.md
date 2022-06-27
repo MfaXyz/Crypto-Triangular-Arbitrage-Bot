@@ -17,15 +17,15 @@ set path of python https://stackoverflow.com/questions/3701646/how-to-add-to-the
 and run python file: python main.py
 ```
 for find structuring pairs your must uncomment these two lines:
-'''
+```
 coin_list = first_step()
 structured_pairs = second_step(coin_list)
-'''
+```
 and comment last line:
-'''
+```
 while True:
     third_step()
-'''
+```
 after a while a json file named `structured_triangular_pairs.json` will create.
 
 ## Contributions & Further Improvement
