@@ -578,7 +578,7 @@ def third_step():
                 This part, which is related to the execution of
                 the transaction in the exchange, does not work properly and you
                 will most likely lose money after its execution!
-                I look forward to your commits to make this part profitable:)
+                I look forward to your comments to make this part profitable:)
                 """
                 first_amount1 = amount_dict[real_rate_arb['swap_1']]
                 base_increment1 = len(str(inc_list[real_rate_arb['contract_1']])) - 2
@@ -592,13 +592,16 @@ def third_step():
                     'final_amount1': final_amount1
                 })
 
-                buy = client.create_limit_order(real_rate_arb['contract_1'],
+                buy = client.create_market_order(real_rate_arb['contract_1'],
                                                  'sell',
-                                                 size=final_amount1,
-                                                 price=real_rate_arb['bid_con_1'])
+                                                 size=final_amount1)
                 
-                time.sleep(2)
-                first_amount2 = float(final_amount1) * float(real_rate_arb['bid_con_1'])
+                #time.sleep(0.1)
+                first_amount2 = 0
+                for x in user.get_account_list():
+                  if x['currency'] == real_rate_arb['swap_2'] and x['type'] == 'trade':
+                    first_amount2 = x['available']
+                #first_amount2 = float(final_amount1) * float(real_rate_arb['bid_con_1'])
                 base_increment2 = len(str(qinc_list[real_rate_arb['contract_2']])) - 2
                 available_amount2 = f"{float(first_amount2):.{base_increment2}f}"
                 final_amount2 = f"{float(available_amount2) - (float(available_amount2) * 1 / 100):.{base_increment2}f}"
@@ -610,13 +613,16 @@ def third_step():
                     'final_amount2': final_amount2
                 })
 
-                sell = client.create_limit_order(real_rate_arb['contract_2'],
+                sell = client.create_market_order(real_rate_arb['contract_2'],
                                                   'buy',
-                                                  size=final_amount2,
-                                                  price=real_rate_arb['ask_con_2'])
+                                                  funds=final_amount2)
 
-                time.sleep(2)
-                first_amount3 = float(final_amount2) * float(real_rate_arb['ask_con_2'])
+                #time.sleep(2)
+                first_amount3 = 0
+                for x in user.get_account_list():
+                  if x['currency'] == real_rate_arb['swap_3'] and x['type'] == 'trade':
+                    first_amount3 = x['available']
+                #first_amount3 = float(final_amount2) * float(real_rate_arb['ask_con_2'])
                 base_increment3 = len(str(inc_list[real_rate_arb['contract_3']])) - 2
                 available_amount3 = f"{float(first_amount3):.{base_increment3}f}"
                 final_amount3 = f"{float(available_amount3) - (float(available_amount3) * 1 / 100):.{base_increment3}f}"
@@ -628,22 +634,19 @@ def third_step():
                     'final_amount3': final_amount3
                 })
 
-                buy = client.create_limit_order(real_rate_arb['contract_3'],
+                buy = client.create_market_order(real_rate_arb['contract_3'],
                                                  'sell',
-                                                 size=final_amount3,
-                                                 price=real_rate_arb['bid_con_3'])
-                amount_dict['USDT'] = float(user.get_account('account_id')['available'])
+                                                 size=final_amount3)
                 amount_dict['BTC'] = float(user.get_account('account_id')['available'])
-                amount_dict['ETH'] = float(user.get_account('account_id')['available'])
                 print(float(amount_dict[real_rate_arb['swap_1']]), float(first_amount1))
                 print(float(amount_dict[real_rate_arb['swap_1']]) - float(first_amount1))
-                print(f"{float(float(amount_dict[real_rate_arb['swap_1']]) * 100 / float(first_amount1)):.{10}f}")
-                time.sleep(10)
+                print('Profit Percentage:' ,f"{float(float(amount_dict[real_rate_arb['swap_1']]) * 100 / float(first_amount1)):.{10}f}")
+                time.sleep(5)
                 """
                 This part, which is related to the execution of
                 the transaction in the exchange, does not work properly and you
                 will most likely lose money after its execution!
-                I look forward to your commits to make this part profitable:)
+                I look forward to your comments to make this part profitable:)
                 END OF PART. """
 
 
