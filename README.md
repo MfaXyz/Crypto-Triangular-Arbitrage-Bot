@@ -1,5 +1,5 @@
 # Crypto-Triangular-Arbitrage-Bot
-The algorithm to calculate Triangular Arbitrage with depth on Centralized exchanges!
+The algorithm to calculate Triangular Arbitrage with depth on Centralized exchanges.
 
 ## Introduction
 This algorithmic trading bot checks and detects arbitrage opportunities. This works on any Exchange with minor configuration. I'm just right now config script for kucoin exchange.
