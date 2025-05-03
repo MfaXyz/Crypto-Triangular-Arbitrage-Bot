@@ -12,10 +12,10 @@ This algorithmic trading bot checks and detects arbitrage opportunities. This wo
 
 ## Setup & Guide
 ```
-git clone https://github.com/MfaXyz/Crypto-Triangular-Arbitrage-Bot.git
-Install Python!
-set path of python https://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows
-and run python file: python main.py
+1- git clone https://github.com/MfaXyz/Crypto-Triangular-Arbitrage-Bot.git
+2- Install Python!
+3- set path of python https://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows
+4- and run python file: python main.py
 ```
 for find structuring pairs your must uncomment these two lines:
 ```
